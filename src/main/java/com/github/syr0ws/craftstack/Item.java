@@ -15,12 +15,7 @@ public class Item {
 
     private final Map<String, ItemComponent> components = new HashMap<>();
 
-    public static Item create(Type type) {
-        Validate.notNull(type, "type component cannot be null");
-        return new Item().addComponent(type);
-    }
-
-    public ItemStack toItemStack() {
+    public ItemStack build() {
 
         ItemStack stack = new ItemStack(Material.AIR);
 
@@ -59,5 +54,10 @@ public class Item {
 
     public List<ItemComponent> getComponents() {
         return new ArrayList<>(this.components.values());
+    }
+
+    public static Item create(Type type) {
+        Validate.notNull(type, "type component cannot be null");
+        return new Item().addComponent(type);
     }
 }
