@@ -1,7 +1,7 @@
 package com.github.syr0ws.craftstack;
 
 import com.github.syr0ws.craftstack.loader.ItemComponentLoaderService;
-import com.github.syr0ws.craftstack.loader.yaml.*;
+import com.github.syr0ws.craftstack.loader.component.yaml.*;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class CraftStack {

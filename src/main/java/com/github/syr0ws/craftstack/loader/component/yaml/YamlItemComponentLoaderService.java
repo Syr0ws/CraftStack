@@ -1,7 +1,7 @@
-package com.github.syr0ws.craftstack.loader.yaml;
+package com.github.syr0ws.craftstack.loader.component.yaml;
 
 import com.github.syr0ws.crafter.util.Validate;
-import com.github.syr0ws.craftstack.loader.ItemComponentLoader;
+import com.github.syr0ws.craftstack.loader.component.ItemComponentLoader;
 import com.github.syr0ws.craftstack.loader.ItemComponentLoaderService;
 import org.bukkit.configuration.ConfigurationSection;
 

@@ -1,5 +1,7 @@
 package com.github.syr0ws.craftstack.loader;
 
+import com.github.syr0ws.craftstack.loader.component.ItemComponentLoader;
+
 import java.util.List;
 
 public interface ItemComponentLoaderService<T> {
