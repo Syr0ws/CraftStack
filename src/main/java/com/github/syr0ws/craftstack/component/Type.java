@@ -16,7 +16,7 @@ public class Type implements ItemComponent {
     }
 
     public Material getMaterial() {
-        return material;
+        return this.material;
     }
 
     public void setMaterial(Material material) {
