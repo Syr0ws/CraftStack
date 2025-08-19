@@ -9,7 +9,6 @@ public class CraftStack {
     public static ItemComponentLoaderService<ConfigurationSection> getDefaultComponentLoaderService() {
 
         ItemComponentLoaderService<ConfigurationSection> service = new YamlItemComponentLoaderService();
-        service.addLoader(new YamlTypeComponentLoader());
         service.addLoader(new YamlDisplayNameComponentLoader());
         service.addLoader(new YamlLoreComponentLoader());
         service.addLoader(new YamlCustomModelDataComponentLoader());

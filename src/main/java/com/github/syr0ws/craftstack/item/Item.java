@@ -1,7 +1,6 @@
 package com.github.syr0ws.craftstack.item;
 
 import com.github.syr0ws.crafter.util.Validate;
-import com.github.syr0ws.craftstack.item.component.Type;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -10,27 +9,12 @@ import java.util.*;
 
 public class Item {
 
+    private final Material material;
     private final Map<String, ItemComponent> components = new HashMap<>();
 
-    public ItemStack build() {
-
-        ItemStack stack = new ItemStack(Material.AIR);
-
-        // Starting by applying the type component to fix the ItemMeta.
-        // This must be done if we want to avoid ItemMeta copy for each component to save performances.
-        this.components.get(ItemComponentRegistry.TYPE.getName()).apply(stack, stack.getItemMeta());
-
-        ItemMeta meta = stack.getItemMeta();
-        List<ItemComponent> components = this.getComponents();
-
-        // Removing the type component which has already been handled.
-        components.removeIf(component -> component.getName().equals(ItemComponentRegistry.TYPE.getName()));
-
-        // Applying components.
-        components.forEach(component -> component.apply(stack, meta));
-        stack.setItemMeta(meta);
-
-        return stack;
+    private Item(Material material) {
+        Validate.notNull(material, "material cannot be null");
+        this.material = material;
     }
 
     public Item addComponent(ItemComponent component) {
@@ -39,10 +23,9 @@ public class Item {
         return this;
     }
 
-    public Item addComponents(ItemComponent... components) {
+    public void addComponents(ItemComponent... components) {
         Validate.notNull(components, "components cannot be null");
         Arrays.stream(components).filter(Objects::nonNull).forEach(this::addComponent);
-        return this;
     }
 
     public boolean removeComponent(String componentName) {
@@ -56,11 +39,26 @@ public class Item {
     }
 
     public List<ItemComponent> getComponents() {
-        return new ArrayList<>(this.components.values());
+        return List.copyOf(this.components.values());
     }
 
-    public static Item create(Type type) {
-        Validate.notNull(type, "type component cannot be null");
-        return new Item().addComponent(type);
+    public ItemStack build() {
+
+        ItemStack stack = new ItemStack(this.material);
+
+        // Retrieving the ItemMeta once to avoid multiple copies.
+        ItemMeta meta = stack.getItemMeta();
+
+        // Applying components.
+        this.components.values().forEach(component -> component.apply(stack, meta));
+
+        // Applying the modified ItemMeta to the item.
+        stack.setItemMeta(meta);
+
+        return stack;
+    }
+
+    public static Item create(Material material) {
+        return new Item(material);
     }
 }
