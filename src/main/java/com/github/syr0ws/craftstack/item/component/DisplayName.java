@@ -1,9 +1,9 @@
-package com.github.syr0ws.craftstack.component;
+package com.github.syr0ws.craftstack.item.component;
 
 import com.github.syr0ws.crafter.text.TextUtil;
 import com.github.syr0ws.crafter.util.Validate;
-import com.github.syr0ws.craftstack.ItemComponent;
-import com.github.syr0ws.craftstack.ItemComponentRegistry;
+import com.github.syr0ws.craftstack.item.ItemComponent;
+import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -36,6 +36,6 @@ public class DisplayName implements ItemComponent {
 
     @Override
     public String getName() {
-        return ItemComponentRegistry.NAME.getName();
+        return ItemComponentRegistry.DISPLAY_NAME.getName();
     }
 }

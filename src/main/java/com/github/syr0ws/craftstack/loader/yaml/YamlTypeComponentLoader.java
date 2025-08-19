@@ -1,13 +1,13 @@
 package com.github.syr0ws.craftstack.loader.yaml;
 
-import com.github.syr0ws.craftstack.ItemComponent;
-import com.github.syr0ws.craftstack.ItemComponentRegistry;
-import com.github.syr0ws.craftstack.component.Type;
+import com.github.syr0ws.craftstack.item.ItemComponent;
+import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
+import com.github.syr0ws.craftstack.item.component.Type;
 import com.github.syr0ws.craftstack.loader.ItemComponentLoadingException;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 
-public class TypeComponentLoader extends YamlItemComponentLoader {
+public class YamlTypeComponentLoader extends YamlItemComponentLoader {
 
     private static final String PROPERTY_NAME = "type";
 

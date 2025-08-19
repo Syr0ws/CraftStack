@@ -1,7 +1,7 @@
-package com.github.syr0ws.craftstack;
+package com.github.syr0ws.craftstack.item;
 
 import com.github.syr0ws.crafter.util.Validate;
-import com.github.syr0ws.craftstack.component.Type;
+import com.github.syr0ws.craftstack.item.component.Type;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;

@@ -1,7 +1,7 @@
-package com.github.syr0ws.craftstack.component;
+package com.github.syr0ws.craftstack.item.component;
 
-import com.github.syr0ws.craftstack.ItemComponent;
-import com.github.syr0ws.craftstack.ItemComponentRegistry;
+import com.github.syr0ws.craftstack.item.ItemComponent;
+import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
