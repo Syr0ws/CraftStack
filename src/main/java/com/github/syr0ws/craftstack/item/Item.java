@@ -6,10 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Item {
 
@@ -39,6 +36,12 @@ public class Item {
     public Item addComponent(ItemComponent component) {
         Validate.notNull(component, "component cannot be null");
         this.components.put(component.getName(), component);
+        return this;
+    }
+
+    public Item addComponents(ItemComponent... components) {
+        Validate.notNull(components, "components cannot be null");
+        Arrays.stream(components).filter(Objects::nonNull).forEach(this::addComponent);
         return this;
     }
 
