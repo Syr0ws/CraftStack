@@ -1,10 +1,15 @@
 package com.github.syr0ws.craftstack.loader;
 
+import com.github.syr0ws.craftstack.item.Item;
 import com.github.syr0ws.craftstack.loader.component.ItemComponentLoader;
 
 import java.util.List;
 
-public interface ItemComponentLoaderService<T> {
+public interface ItemLoaderService<T> {
+
+    Item load(T dataSource) throws ItemException;
+
+    List<Item> loadAll(T datasource) throws ItemException;
 
     void addLoader(ItemComponentLoader<T> loader);
 

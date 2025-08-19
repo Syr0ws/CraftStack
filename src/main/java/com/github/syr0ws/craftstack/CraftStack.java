@@ -1,14 +1,15 @@
 package com.github.syr0ws.craftstack;
 
-import com.github.syr0ws.craftstack.loader.ItemComponentLoaderService;
+import com.github.syr0ws.craftstack.loader.ItemLoaderService;
+import com.github.syr0ws.craftstack.loader.YamlItemLoaderService;
 import com.github.syr0ws.craftstack.loader.component.yaml.*;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class CraftStack {
 
-    public static ItemComponentLoaderService<ConfigurationSection> getDefaultComponentLoaderService() {
+    public static ItemLoaderService<ConfigurationSection> getDefaultComponentLoaderService() {
 
-        ItemComponentLoaderService<ConfigurationSection> service = new YamlItemComponentLoaderService();
+        ItemLoaderService<ConfigurationSection> service = new YamlItemLoaderService();
         service.addLoader(new YamlDisplayNameComponentLoader());
         service.addLoader(new YamlLoreComponentLoader());
         service.addLoader(new YamlCustomModelDataComponentLoader());

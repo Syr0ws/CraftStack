@@ -1,8 +1,8 @@
 package com.github.syr0ws.craftstack.loader.component;
 
-import java.io.IOException;
+import com.github.syr0ws.craftstack.loader.ItemException;
 
-public class ItemComponentException extends IOException {
+public class ItemComponentException extends ItemException {
 
     public ItemComponentException(String message) {
         super(message);

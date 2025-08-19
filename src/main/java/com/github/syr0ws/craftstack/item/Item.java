@@ -28,6 +28,11 @@ public class Item {
         Arrays.stream(components).filter(Objects::nonNull).forEach(this::addComponent);
     }
 
+    public void addComponents(Collection<ItemComponent> components) {
+        Validate.notNull(components, "components cannot be null");
+        components.stream().filter(Objects::nonNull).forEach(this::addComponent);
+    }
+
     public boolean removeComponent(String componentName) {
         Validate.notNull(componentName, "componentName cannot be null");
         return this.components.remove(componentName) != null;
