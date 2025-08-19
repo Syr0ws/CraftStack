@@ -1,8 +1,8 @@
-package com.github.syr0ws.craftstack.component;
+package com.github.syr0ws.craftstack.item.component;
 
 import com.github.syr0ws.crafter.util.Validate;
-import com.github.syr0ws.craftstack.ItemComponent;
-import com.github.syr0ws.craftstack.ItemComponentRegistry;
+import com.github.syr0ws.craftstack.item.ItemComponent;
+import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -16,7 +16,7 @@ public class Type implements ItemComponent {
     }
 
     public Material getMaterial() {
-        return material;
+        return this.material;
     }
 
     public void setMaterial(Material material) {

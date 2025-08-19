@@ -1,4 +1,4 @@
-package com.github.syr0ws.craftstack;
+package com.github.syr0ws.craftstack.item;
 
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;

@@ -1,26 +1,18 @@
-package com.github.syr0ws.craftstack;
+package com.github.syr0ws.craftstack.item;
 
 import com.github.syr0ws.crafter.util.Validate;
-import com.github.syr0ws.craftstack.component.Type;
+import com.github.syr0ws.craftstack.item.component.Type;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Item {
 
     private final Map<String, ItemComponent> components = new HashMap<>();
 
-    public static Item create(Type type) {
-        Validate.notNull(type, "type component cannot be null");
-        return new Item().addComponent(type);
-    }
-
-    public ItemStack toItemStack() {
+    public ItemStack build() {
 
         ItemStack stack = new ItemStack(Material.AIR);
 
@@ -47,6 +39,12 @@ public class Item {
         return this;
     }
 
+    public Item addComponents(ItemComponent... components) {
+        Validate.notNull(components, "components cannot be null");
+        Arrays.stream(components).filter(Objects::nonNull).forEach(this::addComponent);
+        return this;
+    }
+
     public boolean removeComponent(String componentName) {
         Validate.notNull(componentName, "componentName cannot be null");
         return this.components.remove(componentName) != null;
@@ -59,5 +57,10 @@ public class Item {
 
     public List<ItemComponent> getComponents() {
         return new ArrayList<>(this.components.values());
+    }
+
+    public static Item create(Type type) {
+        Validate.notNull(type, "type component cannot be null");
+        return new Item().addComponent(type);
     }
 }

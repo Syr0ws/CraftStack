@@ -1,6 +1,6 @@
 package com.github.syr0ws.craftstack.loader;
 
-import com.github.syr0ws.craftstack.ItemComponent;
+import com.github.syr0ws.craftstack.item.ItemComponent;
 
 public interface ItemComponentLoader<T> {
 

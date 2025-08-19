@@ -1,9 +1,9 @@
-package com.github.syr0ws.craftstack;
+package com.github.syr0ws.craftstack.item;
 
 public enum ItemComponentRegistry {
 
     TYPE,
-    NAME,
+    DISPLAY_NAME,
     LORE,
     GLOW,
     AMOUNT,
