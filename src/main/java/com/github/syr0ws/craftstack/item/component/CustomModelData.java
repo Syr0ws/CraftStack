@@ -5,6 +5,9 @@ import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+/**
+ * Component to change the custom model data of an {@link ItemStack}.
+ */
 public class CustomModelData implements ItemComponent {
 
     private int customModelData;

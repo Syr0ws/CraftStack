@@ -6,6 +6,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 
+/**
+ * Component to change the durability of an {@link ItemStack}.
+ */
 public class Damage implements ItemComponent {
 
     private int damage;
