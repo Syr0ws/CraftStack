@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Item {
 
@@ -45,6 +46,19 @@ public class Item {
 
     public List<ItemComponent> getComponents() {
         return List.copyOf(this.components.values());
+    }
+
+    public Item copy() {
+
+        Item copy = new Item(this.material);
+
+        List<ItemComponent> components = this.components.values().stream()
+                .map(ItemComponent::copy)
+                .toList();
+
+        copy.addComponents(components);
+
+        return copy;
     }
 
     public ItemStack build() {
