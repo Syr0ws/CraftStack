@@ -26,7 +26,8 @@ public class DisplayName implements ItemComponent {
 
     @Override
     public void apply(ItemStack stack, ItemMeta meta) {
-        meta.setDisplayName(this.displayName);
+        String displayName = TextUtil.parseColors(this.displayName);
+        meta.setDisplayName(displayName);
     }
 
     @Override

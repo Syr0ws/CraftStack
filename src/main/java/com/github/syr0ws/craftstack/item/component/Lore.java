@@ -40,7 +40,8 @@ public class Lore implements ItemComponent {
 
     @Override
     public void apply(ItemStack stack, ItemMeta meta) {
-        meta.setLore(this.lore);
+        List<String> lore = TextUtil.parseColors(this.lore);
+        meta.setLore(lore);
     }
 
     @Override
