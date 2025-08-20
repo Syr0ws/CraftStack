@@ -7,6 +7,9 @@ import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+/**
+ * Component to change the display name of an {@link ItemStack}.
+ */
 public class DisplayName implements ItemComponent {
 
     private String displayName;

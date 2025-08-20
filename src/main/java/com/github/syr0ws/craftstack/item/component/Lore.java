@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Component to change the lore of an {@link ItemStack}.
+ */
 public class Lore implements ItemComponent {
 
     private final List<String> lore = new ArrayList<>();

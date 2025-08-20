@@ -7,6 +7,9 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+/**
+ * Component to add a glowing (e.g. enchanting) effect to an {@link ItemStack}.
+ */
 public class Glow implements ItemComponent {
 
     @Override

@@ -5,6 +5,9 @@ import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+/**
+ * Component to change the amount of an {@link ItemStack}.
+ */
 public class Amount implements ItemComponent {
 
     private int amount;
