@@ -7,7 +7,10 @@ import com.github.syr0ws.craftstack.loader.component.ItemComponentLoader;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class YamlItemLoaderService implements ItemLoaderService<ConfigurationSection> {
 
@@ -30,11 +33,11 @@ public class YamlItemLoaderService implements ItemLoaderService<ConfigurationSec
 
         List<Item> items = new ArrayList<>();
 
-        for(String key : section.getKeys(false)) {
+        for (String key : section.getKeys(false)) {
 
             ConfigurationSection itemSection = section.getConfigurationSection(key);
 
-            if(itemSection == null) {
+            if (itemSection == null) {
                 continue;
             }
 
@@ -77,14 +80,14 @@ public class YamlItemLoaderService implements ItemLoaderService<ConfigurationSec
 
         String propertyName = "type";
 
-        if(!section.isString(propertyName)) {
+        if (!section.isString(propertyName)) {
             throw new ItemException("Property '%s' not found or is not a string at '%s'".formatted(propertyName, section.getCurrentPath()));
         }
 
         String type = section.getString(propertyName);
         Material material = Material.matchMaterial(type);
 
-        if(material == null) {
+        if (material == null) {
             throw new ItemException("Invalid type '%s' at '%s'".formatted(type, section.getCurrentPath()));
         }
 
@@ -95,9 +98,9 @@ public class YamlItemLoaderService implements ItemLoaderService<ConfigurationSec
 
         List<ItemComponent> components = new ArrayList<>();
 
-        for(ItemComponentLoader<ConfigurationSection> loader : this.loaders.values()) {
+        for (ItemComponentLoader<ConfigurationSection> loader : this.loaders.values()) {
 
-            if(loader.canLoad(section)) {
+            if (loader.canLoad(section)) {
                 ItemComponent component = loader.loadItemComponent(section);
                 components.add(component);
             }

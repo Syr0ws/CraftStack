@@ -15,7 +15,7 @@ public class YamlLoreComponentLoader extends YamlItemComponentLoader {
     @Override
     public ItemComponent loadItemComponent(ConfigurationSection section) throws ItemComponentException {
 
-        if(!section.isList(PROPERTY_NAME)) {
+        if (!section.isList(PROPERTY_NAME)) {
             throw new ItemComponentException("Property '%s' is not a list at '%s'".formatted(PROPERTY_NAME, section.getCurrentPath()));
         }
 

@@ -13,7 +13,7 @@ public class YamlDisplayNameComponentLoader extends YamlItemComponentLoader {
     @Override
     public ItemComponent loadItemComponent(ConfigurationSection section) throws ItemComponentException {
 
-        if(!section.isString(PROPERTY_NAME)) {
+        if (!section.isString(PROPERTY_NAME)) {
             throw new ItemComponentException("Property '%s' is not a string at '%s'".formatted(PROPERTY_NAME, section.getCurrentPath()));
         }
 

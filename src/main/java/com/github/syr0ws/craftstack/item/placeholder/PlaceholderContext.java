@@ -3,7 +3,10 @@ package com.github.syr0ws.craftstack.item.placeholder;
 import com.github.syr0ws.crafter.message.placeholder.Placeholder;
 import com.github.syr0ws.crafter.util.Validate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -25,7 +28,7 @@ public class PlaceholderContext {
      */
     public String parse(String text) {
         Validate.notNull(text, "text cannot be null");
-        for(PlaceholderParser parser : this.parsers) {
+        for (PlaceholderParser parser : this.parsers) {
             text = parser.parse(text);
         }
         return text;

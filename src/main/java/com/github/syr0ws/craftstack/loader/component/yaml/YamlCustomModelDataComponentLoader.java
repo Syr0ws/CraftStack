@@ -13,7 +13,7 @@ public class YamlCustomModelDataComponentLoader extends YamlItemComponentLoader 
     @Override
     public ItemComponent loadItemComponent(ConfigurationSection section) throws ItemComponentException {
 
-        if(!section.isSet(PROPERTY_NAME)) {
+        if (!section.isSet(PROPERTY_NAME)) {
             throw new ItemComponentException("Property '%s' is not an int at '%s'".formatted(PROPERTY_NAME, section.getCurrentPath()));
         }
 

@@ -19,7 +19,7 @@ public class ItemContext {
     /**
      * Creates a new context for the given {@link ItemStack}.
      *
-     * @param stack the item stack
+     * @param stack              the item stack
      * @param placeholderContext the placeholder context, may be {@code null}
      */
     public ItemContext(ItemStack stack, PlaceholderContext placeholderContext) {

@@ -30,7 +30,7 @@ public class DefaultPlaceholderParser implements PlaceholderParser {
         Validate.notNull(text, "text cannot be null");
 
         String parsed = text;
-        for(Map.Entry<Placeholder, String> entry : this.placeholders.entrySet()) {
+        for (Map.Entry<Placeholder, String> entry : this.placeholders.entrySet()) {
             parsed = parsed.replace(entry.getKey().getName(), entry.getValue());
         }
 

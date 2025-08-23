@@ -21,6 +21,16 @@ public class Item {
     }
 
     /**
+     * Creates a new item with the given material.
+     *
+     * @param material the base {@link Material}
+     * @return a new {@link Item}
+     */
+    public static Item create(Material material) {
+        return new Item(material);
+    }
+
+    /**
      * Adds a component to this item.
      *
      * @param component the {@link ItemComponent} to add
@@ -128,15 +138,5 @@ public class Item {
      */
     public ItemStack build() {
         return this.build(null);
-    }
-
-    /**
-     * Creates a new item with the given material.
-     *
-     * @param material the base {@link Material}
-     * @return a new {@link Item}
-     */
-    public static Item create(Material material) {
-        return new Item(material);
     }
 }

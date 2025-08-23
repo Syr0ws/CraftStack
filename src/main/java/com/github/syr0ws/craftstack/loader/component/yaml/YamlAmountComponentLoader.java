@@ -13,7 +13,7 @@ public class YamlAmountComponentLoader extends YamlItemComponentLoader {
     @Override
     public ItemComponent loadItemComponent(ConfigurationSection section) throws ItemComponentException {
 
-        if(!section.isInt(PROPERTY_NAME)) {
+        if (!section.isInt(PROPERTY_NAME)) {
             throw new ItemComponentException("Property '%s' is not an int at '%s'".formatted(PROPERTY_NAME, section.getCurrentPath()));
         }
 
