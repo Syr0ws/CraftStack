@@ -108,7 +108,7 @@ Player player = ... ;
 PlaceholderContext context = new PlaceholderContext.Builder()
         // Provide your placeholders.
         .withDefaultParser(placeholders)
-        // Optional: add this line to support PlaceholderAPI
+        // Optional: add this line to support PlaceholderAPI.
         .withParser(new PlaceholderApiParser(player))
         .build();
 
@@ -116,7 +116,7 @@ ItemStack diamond = Item.create(Material.DIAMOND)
         .addComponent(new DisplayName("%name%"))
         .addComponent(new Lore("%placeholder%", "%placeholder%", "%placeholder%"))
         .addComponent(new CustomModelData(1))
-        // Build the item with the placeholder context
+        // Build the item with the placeholder context.
         .build(context);
 ```
 
