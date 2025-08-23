@@ -4,8 +4,8 @@ import com.github.syr0ws.crafter.text.TextUtil;
 import com.github.syr0ws.crafter.util.Validate;
 import com.github.syr0ws.craftstack.item.ItemComponent;
 import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
+import com.github.syr0ws.craftstack.item.ItemContext;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,9 +42,15 @@ public class Lore implements ItemComponent {
     }
 
     @Override
-    public void apply(ItemStack stack, ItemMeta meta) {
-        List<String> lore = TextUtil.parseColors(this.lore);
-        meta.setLore(lore);
+    public void apply(ItemContext context) {
+
+        List<String> lore = context.getPlaceholderContext()
+                .map(pctx -> pctx.parseAll(this.lore))
+                .orElse(this.lore);
+
+        lore = TextUtil.parseColors(lore);
+
+        context.getItemMeta().setLore(lore);
     }
 
     @Override

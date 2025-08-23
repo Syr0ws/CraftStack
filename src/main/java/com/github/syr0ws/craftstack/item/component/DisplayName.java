@@ -4,8 +4,8 @@ import com.github.syr0ws.crafter.text.TextUtil;
 import com.github.syr0ws.crafter.util.Validate;
 import com.github.syr0ws.craftstack.item.ItemComponent;
 import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
+import com.github.syr0ws.craftstack.item.ItemContext;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 /**
  * Component to change the display name of an {@link ItemStack}.
@@ -28,9 +28,15 @@ public class DisplayName implements ItemComponent {
     }
 
     @Override
-    public void apply(ItemStack stack, ItemMeta meta) {
-        String displayName = TextUtil.parseColors(this.displayName);
-        meta.setDisplayName(displayName);
+    public void apply(ItemContext context) {
+
+        String displayName = context.getPlaceholderContext()
+                .map(pctx -> pctx.parse(this.displayName))
+                .orElse(this.displayName);
+
+        displayName = TextUtil.parseColors(displayName);
+
+        context.getItemMeta().setDisplayName(displayName);
     }
 
     @Override

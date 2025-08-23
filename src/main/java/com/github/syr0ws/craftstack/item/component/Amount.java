@@ -2,8 +2,8 @@ package com.github.syr0ws.craftstack.item.component;
 
 import com.github.syr0ws.craftstack.item.ItemComponent;
 import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
+import com.github.syr0ws.craftstack.item.ItemContext;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 /**
  * Component to change the amount of an {@link ItemStack}.
@@ -25,8 +25,8 @@ public class Amount implements ItemComponent {
     }
 
     @Override
-    public void apply(ItemStack stack, ItemMeta meta) {
-        stack.setAmount(this.amount);
+    public void apply(ItemContext context) {
+        context.getItemStack().setAmount(this.amount);
     }
 
     @Override
