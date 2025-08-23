@@ -39,7 +39,7 @@
         <dependency>
             <groupId>com.github.syr0ws</groupId>
             <artifactId>Crafter</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.9</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
