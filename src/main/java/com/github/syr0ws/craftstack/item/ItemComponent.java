@@ -9,12 +9,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 public interface ItemComponent {
 
     /**
-     * Applies this component to the given item stack.
+     * Applies this component using the given context.
      *
-     * @param stack the {@link ItemStack} to modify
-     * @param meta the {@link ItemMeta} associated with this {@link ItemStack}
+     * @param context the item context
      */
-    void apply(ItemStack stack, ItemMeta meta);
+    void apply(ItemContext context);
 
     /**
      * Creates a copy of this component.

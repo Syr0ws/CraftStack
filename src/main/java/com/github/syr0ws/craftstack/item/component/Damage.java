@@ -2,9 +2,9 @@ package com.github.syr0ws.craftstack.item.component;
 
 import com.github.syr0ws.craftstack.item.ItemComponent;
 import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
+import com.github.syr0ws.craftstack.item.ItemContext;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
-import org.bukkit.inventory.meta.ItemMeta;
 
 /**
  * Component to change the durability of an {@link ItemStack}.
@@ -26,9 +26,9 @@ public class Damage implements ItemComponent {
     }
 
     @Override
-    public void apply(ItemStack stack, ItemMeta meta) {
+    public void apply(ItemContext context) {
 
-        if(!(meta instanceof Damageable damageable)) {
+        if (!(context.getItemMeta() instanceof Damageable damageable)) {
             throw new IllegalStateException("ItemMeta is not a Damageable");
         }
 

@@ -95,6 +95,31 @@ ItemStack diamond = Item.create(Material.DIAMOND)
         .build();
 ```
 
+The library also supports placeholder replacement. To use this feature, create a `PlaceholderContext` and pass it to the
+`Item#build(PlaceholderContext)` method.
+
+```java
+// Create and populate a map with placeholders and their corresponding values.
+Map<Placeholder, String> placeholders = new HashMap<>();
+
+// Required if you want to support PlaceholderAPI.
+Player player = ... ;
+
+PlaceholderContext context = new PlaceholderContext.Builder()
+        // Provide your placeholders.
+        .withDefaultParser(placeholders)
+        // Optional: add this line to support PlaceholderAPI
+        .withParser(new PlaceholderApiParser(player))
+        .build();
+
+ItemStack diamond = Item.create(Material.DIAMOND)
+        .addComponent(new DisplayName("%name%"))
+        .addComponent(new Lore("%placeholder%", "%placeholder%", "%placeholder%"))
+        .addComponent(new CustomModelData(1))
+        // Build the item with the placeholder context
+        .build(context);
+```
+
 ## Available properties
 
 | **Property**        | **Constructors**                       | Comment                                                                     |
