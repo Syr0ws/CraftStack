@@ -63,7 +63,7 @@ Items can then be loaded programmatically using the `ItemLoaderService` interfac
 can be created from the `CraftStack` class.
 
 ```java
-ItemLoaderService<ConfigurationSection> service = CraftStack.getDefaultComponentLoaderService();
+ItemLoaderService<ConfigurationSection> service = CraftStack.getDefaultItemLoader();
 ```
 
 The methods `ItemLoaderService#load(ConfigurationSection)` and `ItemLoaderService#loadAll(ConfigurationSection)` can
@@ -72,7 +72,7 @@ then be used to load a single or multiple items.
 ```java
 ConfigurationSection section = ... ;
 
-ItemLoaderService<ConfigurationSection> service = CraftStack.getDefaultComponentLoaderService();
+ItemLoaderService<ConfigurationSection> service = CraftStack.getDefaultItemLoader();
 
 try {
     List<Item> items = service.loadAll(section);

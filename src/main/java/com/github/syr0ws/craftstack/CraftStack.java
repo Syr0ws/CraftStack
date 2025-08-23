@@ -16,7 +16,7 @@ public class CraftStack {
      *
      * @return a configured {@link ItemLoaderService} that handles YAML as data source
      */
-    public static ItemLoaderService<ConfigurationSection> getDefaultComponentLoaderService() {
+    public static ItemLoaderService<ConfigurationSection> getDefaultItemLoader() {
 
         ItemLoaderService<ConfigurationSection> service = new YamlItemLoaderService();
         service.addLoader(new YamlDisplayNameComponentLoader());
