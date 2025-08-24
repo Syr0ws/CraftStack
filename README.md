@@ -122,13 +122,14 @@ ItemStack diamond = Item.create(Material.DIAMOND)
 
 ## Available properties
 
-| **Property**        | **Constructors**                       | Comment                                                                     |
-|---------------------|----------------------------------------|-----------------------------------------------------------------------------|
-| Display Name        | `DisplayName(String)`                  | Support for colors using color tags and hex.                                |
-| Lore                | `Lore(List<String>)`, `Lore(String[])` | Support for colors using color tags and hex.                                |
-| Custom Model Data   | `CustomModelData(int)`                 | -                                                                           |
-| Amount              | `Amount(int)`                          | -                                                                           |
-| Damage / Durability | `Damage(int)`                          | -                                                                           |
-| Glowing             | `Glow()`                               | Add an enchantment effect to the item without showing any enchantment name. |
+| **Property**        | **Constructors**                       | Comment                                                                                                            |
+|---------------------|----------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| Display Name        | `DisplayName(String)`                  | Support for colors using color tags and hex.                                                                       |
+| Lore                | `Lore(List<String>)`, `Lore(String[])` | Support for colors using color tags and hex.                                                                       |
+| Custom Model Data   | `CustomModelData(int)`                 | -                                                                                                                  |
+| Amount              | `Amount(int)`                          | -                                                                                                                  |
+| Damage / Durability | `Damage(int)`                          | -                                                                                                                  |
+| Glowing             | `Glow()`                               | Add an enchantment effect to the item without showing any enchantment name. Should be used in versions below 1.21. |
+| Glint               | `Glint(boolean)`                       | Control the glint effect on an item. Only available in 1.21+.                                                      |
 
 _Note: More properties will be supported as needed. Feel free to contribute and add support for new properties!_

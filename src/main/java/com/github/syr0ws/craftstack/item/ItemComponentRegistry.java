@@ -9,6 +9,7 @@ public enum ItemComponentRegistry {
     DISPLAY_NAME,
     LORE,
     GLOW,
+    GLINT,
     AMOUNT,
     CUSTOM_MODEL_DATA,
     DAMAGE;
