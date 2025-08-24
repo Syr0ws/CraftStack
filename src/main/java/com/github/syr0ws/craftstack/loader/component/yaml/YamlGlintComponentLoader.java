@@ -13,7 +13,7 @@ public class YamlGlintComponentLoader extends YamlItemComponentLoader {
     @Override
     public ItemComponent loadItemComponent(ConfigurationSection section) throws ConfigurationException {
 
-        if(!section.isBoolean(PROPERTY_NAME)) {
+        if (!section.isBoolean(PROPERTY_NAME)) {
             throw new ConfigurationException("Property '%s' is not a boolean at '%s'".formatted(PROPERTY_NAME, section.getCurrentPath()));
         }
 

@@ -20,7 +20,7 @@ public class CraftStack {
 
         ItemLoaderService<ConfigurationSection> service = new YamlItemLoaderService();
 
-        for(YamlComponentLoaderRegistry registry : YamlComponentLoaderRegistry.values()) {
+        for (YamlComponentLoaderRegistry registry : YamlComponentLoaderRegistry.values()) {
             service.addLoader(registry.getLoader());
         }
 
