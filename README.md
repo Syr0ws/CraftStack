@@ -133,5 +133,6 @@ ItemStack diamond = Item.create(Material.DIAMOND)
 | Damage / Durability | `Damage(int)`                          | all     | -                                    |
 | Glowing             | `Glow()`                               | < 1.21  | Add a glowing effect to the item.    |
 | Glint               | `Glint(boolean)`                       | >= 1.21 | Toggle the glint effect on the item. |
+| Hide Tooltip        | `HideTooltip()`                        | >= 1.21 | -                                    |
 
 _Note: More properties will be supported as needed. Feel free to contribute and add support for new properties!_

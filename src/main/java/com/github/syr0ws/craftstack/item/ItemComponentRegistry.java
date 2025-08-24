@@ -12,7 +12,8 @@ public enum ItemComponentRegistry {
     GLINT,
     AMOUNT,
     CUSTOM_MODEL_DATA,
-    DAMAGE;
+    DAMAGE,
+    HIDE_TOOLTIP;
 
     /**
      * Returns the name of this component registry entry.
