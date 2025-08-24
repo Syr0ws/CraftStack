@@ -1,5 +1,6 @@
 package com.github.syr0ws.craftstack.loader;
 
+import com.github.syr0ws.crafter.config.ConfigurationException;
 import com.github.syr0ws.crafter.util.Validate;
 import com.github.syr0ws.craftstack.item.Item;
 import com.github.syr0ws.craftstack.item.ItemComponent;
@@ -17,7 +18,7 @@ public class YamlItemLoaderService implements ItemLoaderService<ConfigurationSec
     private final Map<String, ItemComponentLoader<ConfigurationSection>> loaders = new HashMap<>();
 
     @Override
-    public Item load(ConfigurationSection section) throws ItemException {
+    public Item load(ConfigurationSection section) throws ConfigurationException {
 
         Material material = this.loadMaterial(section);
         List<ItemComponent> components = this.loadComponents(section);
@@ -29,7 +30,7 @@ public class YamlItemLoaderService implements ItemLoaderService<ConfigurationSec
     }
 
     @Override
-    public List<Item> loadAll(ConfigurationSection section) throws ItemException {
+    public List<Item> loadAll(ConfigurationSection section) throws ConfigurationException {
 
         List<Item> items = new ArrayList<>();
 
@@ -76,25 +77,25 @@ public class YamlItemLoaderService implements ItemLoaderService<ConfigurationSec
         return ConfigurationSection.class;
     }
 
-    private Material loadMaterial(ConfigurationSection section) throws ItemException {
+    private Material loadMaterial(ConfigurationSection section) throws ConfigurationException {
 
         String propertyName = "type";
 
         if (!section.isString(propertyName)) {
-            throw new ItemException("Property '%s' not found or is not a string at '%s'".formatted(propertyName, section.getCurrentPath()));
+            throw new ConfigurationException("Property '%s' not found or is not a string at '%s'".formatted(propertyName, section.getCurrentPath()));
         }
 
-        String type = section.getString(propertyName);
+        String type = section.getString(propertyName, "");
         Material material = Material.matchMaterial(type);
 
         if (material == null) {
-            throw new ItemException("Invalid type '%s' at '%s'".formatted(type, section.getCurrentPath()));
+            throw new ConfigurationException("Invalid type '%s' at '%s'".formatted(type, section.getCurrentPath()));
         }
 
         return material;
     }
 
-    private List<ItemComponent> loadComponents(ConfigurationSection section) throws ItemException {
+    private List<ItemComponent> loadComponents(ConfigurationSection section) throws ConfigurationException {
 
         List<ItemComponent> components = new ArrayList<>();
 

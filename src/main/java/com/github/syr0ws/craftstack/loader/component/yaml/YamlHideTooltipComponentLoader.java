@@ -2,9 +2,7 @@ package com.github.syr0ws.craftstack.loader.component.yaml;
 
 import com.github.syr0ws.craftstack.item.ItemComponent;
 import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
-import com.github.syr0ws.craftstack.item.component.Glow;
 import com.github.syr0ws.craftstack.item.component.HideTooltip;
-import com.github.syr0ws.craftstack.loader.component.ItemComponentException;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class YamlHideTooltipComponentLoader extends YamlItemComponentLoader {
@@ -12,7 +10,7 @@ public class YamlHideTooltipComponentLoader extends YamlItemComponentLoader {
     private static final String PROPERTY_NAME = "hide-tooltip";
 
     @Override
-    public ItemComponent loadItemComponent(ConfigurationSection section) throws ItemComponentException {
+    public ItemComponent loadItemComponent(ConfigurationSection section) {
         return new HideTooltip();
     }
 

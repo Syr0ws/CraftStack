@@ -1,5 +1,6 @@
 package com.github.syr0ws.craftstack.loader;
 
+import com.github.syr0ws.crafter.config.ConfigurationException;
 import com.github.syr0ws.craftstack.item.Item;
 import com.github.syr0ws.craftstack.loader.component.ItemComponentLoader;
 
@@ -17,18 +18,18 @@ public interface ItemLoaderService<T> {
      *
      * @param dataSource the data source
      * @return loaded {@link Item}
-     * @throws ItemException if the item cannot be loaded
+     * @throws ConfigurationException if the item cannot be loaded
      */
-    Item load(T dataSource) throws ItemException;
+    Item load(T dataSource) throws ConfigurationException;
 
     /**
      * Loads all {@link Item} instances from the given data source.
      *
      * @param dataSource the data source
      * @return list of loaded items
-     * @throws ItemException if the items cannot be loaded
+     * @throws ConfigurationException if the items cannot be loaded
      */
-    List<Item> loadAll(T dataSource) throws ItemException;
+    List<Item> loadAll(T dataSource) throws ConfigurationException;
 
     /**
      * Adds an {@link ItemComponentLoader} to this service.

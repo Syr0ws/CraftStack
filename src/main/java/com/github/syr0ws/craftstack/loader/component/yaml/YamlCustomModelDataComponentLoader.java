@@ -1,9 +1,9 @@
 package com.github.syr0ws.craftstack.loader.component.yaml;
 
+import com.github.syr0ws.crafter.config.ConfigurationException;
 import com.github.syr0ws.craftstack.item.ItemComponent;
 import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
 import com.github.syr0ws.craftstack.item.component.CustomModelData;
-import com.github.syr0ws.craftstack.loader.component.ItemComponentException;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class YamlCustomModelDataComponentLoader extends YamlItemComponentLoader {
@@ -11,10 +11,10 @@ public class YamlCustomModelDataComponentLoader extends YamlItemComponentLoader 
     private static final String PROPERTY_NAME = "custom-model-data";
 
     @Override
-    public ItemComponent loadItemComponent(ConfigurationSection section) throws ItemComponentException {
+    public ItemComponent loadItemComponent(ConfigurationSection section) throws ConfigurationException {
 
         if (!section.isSet(PROPERTY_NAME)) {
-            throw new ItemComponentException("Property '%s' is not an int at '%s'".formatted(PROPERTY_NAME, section.getCurrentPath()));
+            throw new ConfigurationException("Property '%s' is not an int at '%s'".formatted(PROPERTY_NAME, section.getCurrentPath()));
         }
 
         int customModelData = section.getInt(PROPERTY_NAME);
