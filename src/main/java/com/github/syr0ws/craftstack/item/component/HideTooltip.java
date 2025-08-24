@@ -4,6 +4,11 @@ import com.github.syr0ws.craftstack.item.ItemComponent;
 import com.github.syr0ws.craftstack.item.ItemComponentRegistry;
 import com.github.syr0ws.craftstack.item.ItemContext;
 
+/**
+ * Component that hides the tooltip of an item.
+ *
+ * <p>Only available for 1.21+</p>
+ */
 public class HideTooltip implements ItemComponent {
 
     @Override
