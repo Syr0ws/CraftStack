@@ -11,8 +11,7 @@ public class TooltipStyle implements ItemComponent {
     private NamespacedKey namespacedKey;
 
     public TooltipStyle(NamespacedKey namespacedKey) {
-        Validate.notNull(namespacedKey, "namespacedKey cannot be null");
-        this.namespacedKey = namespacedKey;
+        this.setNamespacedKey(namespacedKey);
     }
 
     public NamespacedKey getNamespacedKey() {
@@ -20,6 +19,7 @@ public class TooltipStyle implements ItemComponent {
     }
 
     public void setNamespacedKey(NamespacedKey namespacedKey) {
+        Validate.notNull(namespacedKey, "namespacedKey cannot be null");
         this.namespacedKey = namespacedKey;
     }
 
