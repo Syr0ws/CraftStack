@@ -1,3 +1,5 @@
+![link](https://img.shields.io/badge/API-Spigot-blue) ![link](https://img.shields.io/badge/Version-1.17+-yellow)
+
 # CraftStack
 
 CraftStack is a lightweight library that simplifies raw item definition in code and loading from YAML
