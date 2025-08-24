@@ -9,6 +9,7 @@ public enum YamlComponentLoaderRegistry {
     LORE(new YamlLoreComponentLoader()),
     CUSTOM_MODEL_DATA(new YamlCustomModelDataComponentLoader()),
     GLOW(new YamlGlowComponentLoader()),
+    GLINT(new YamlGlintComponentLoader()),
     AMOUNT(new YamlAmountComponentLoader()),
     DAMAGE(new YamlDamageComponentLoader());
 
