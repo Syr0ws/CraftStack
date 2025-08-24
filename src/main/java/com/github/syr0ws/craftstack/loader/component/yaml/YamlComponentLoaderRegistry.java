@@ -12,7 +12,8 @@ public enum YamlComponentLoaderRegistry {
     GLINT(new YamlGlintComponentLoader()),
     AMOUNT(new YamlAmountComponentLoader()),
     DAMAGE(new YamlDamageComponentLoader()),
-    HIDE_TOOLTIP(new YamlHideTooltipComponentLoader());
+    HIDE_TOOLTIP(new YamlHideTooltipComponentLoader()),
+    TOOLTIP_STYLE(new YamlTooltipStyleComponentLoader());
 
     private final ItemComponentLoader<ConfigurationSection> loader;
 
