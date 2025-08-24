@@ -14,7 +14,8 @@ public enum ItemComponentRegistry {
     CUSTOM_MODEL_DATA,
     DAMAGE,
     HIDE_TOOLTIP,
-    TOOLTIP_STYLE;
+    TOOLTIP_STYLE,
+    ITEM_MODEL;
 
     /**
      * Returns the name of this component registry entry.

@@ -13,7 +13,8 @@ public enum YamlComponentLoaderRegistry {
     AMOUNT(new YamlAmountComponentLoader()),
     DAMAGE(new YamlDamageComponentLoader()),
     HIDE_TOOLTIP(new YamlHideTooltipComponentLoader()),
-    TOOLTIP_STYLE(new YamlTooltipStyleComponentLoader());
+    TOOLTIP_STYLE(new YamlTooltipStyleComponentLoader()),
+    ITEM_MODEL(new YamlItemModelComponentLoader());
 
     private final ItemComponentLoader<ConfigurationSection> loader;
 

@@ -135,5 +135,6 @@ ItemStack diamond = Item.create(Material.DIAMOND)
 | Glint               | `Glint(boolean)`                       | >= 1.21 | Toggle the glint effect on the item. |
 | Hide Tooltip        | `HideTooltip()`                        | >= 1.21 | -                                    |
 | Tooltip Style       | `TooltipStyle(NamespacedKey)`          | >= 1.21 | -                                    |
+| Item Model          | `ItemModel(NamespacedKey)`             | >= 1.21 | -                                    |
 
 _Note: More properties will be supported as needed. Feel free to contribute and add support for new properties!_
