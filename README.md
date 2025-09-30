@@ -124,17 +124,6 @@ ItemStack diamond = Item.create(Material.DIAMOND)
 
 ## Available components
 
-| **Component**       | **Constructors**                       | Version | Comment                              |
-|---------------------|----------------------------------------|---------|--------------------------------------|
-| Display Name        | `DisplayName(String)`                  | all     | Support for colors and placeholders. |
-| Lore                | `Lore(List<String>)`, `Lore(String[])` | all     | Support for colors and placeholders. |
-| Custom Model Data   | `CustomModelData(int)`                 | all     | -                                    |
-| Amount              | `Amount(int)`                          | all     | -                                    |
-| Damage / Durability | `Damage(int)`                          | all     | -                                    |
-| Glowing             | `Glow()`                               | < 1.21  | Add a glowing effect to the item.    |
-| Glint               | `Glint(boolean)`                       | >= 1.21 | Toggle the glint effect on the item. |
-| Hide Tooltip        | `HideTooltip()`                        | >= 1.21 | -                                    |
-| Tooltip Style       | `TooltipStyle(NamespacedKey)`          | >= 1.21 | -                                    |
-| Item Model          | `ItemModel(NamespacedKey)`             | >= 1.21 | -                                    |
+You can find all the currently available item components with example of configuration by visiting the [wiki](https://github.com/Syr0ws/CraftStack/wiki/Item-components) of the project.
 
 _Note: More properties will be supported as needed. Feel free to contribute and add support for new properties!_
