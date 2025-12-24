@@ -64,7 +64,21 @@
                         </goals>
                         <configuration>
                             <minimizeJar>true</minimizeJar>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <!-- Useful when using the library as a dependency to not include
+                                 the shaded jars twice and avoid duplication. -->
+                            <createDependencyReducedPom>true</createDependencyReducedPom>
+                            <!-- Remove the META-INF folder (not used by Spigot) from the output jar
+                                 to remove warnings on duplicated files which only one version can be
+                                 copied to the final uber jar. -->
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <!-- Relocate dependencies to avoid version conflicts. -->
                             <relocations>
                                 <relocation>
                                     <pattern>com.github.syr0ws.crafter</pattern>
